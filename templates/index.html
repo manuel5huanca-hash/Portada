@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I&S Market Mini</title>
+<style>
+  * { margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+   }
+
+  body {
+    background: #f0f0f0;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .navbar {
+    background: #fff;
+    border: 2px solid #2e7d32;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 28px;
+    margin: 20px auto;
+    max-width: 1300px;
+    gap: 16px;
+  }
+
+  .navbar-left { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+  }
+
+  .navbar-logo img {
+     height: 52px;
+      object-fit: contain; 
+    }
+
+  .delivery-btn {
+    border: 2px solid #2e7d32;
+    color: #2e7d32;
+    background: #fff;
+    border-radius: 24px;
+    padding: 8px 20px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+  .delivery-btn:hover { 
+    background: #2e7d32;
+     color: #fff; 
+    }
+
+  .navbar-right { 
+    display: flex; 
+    align-items: center; 
+    gap: 18px; 
+  }
+
+  .search-box {
+    border: 1.5px solid #ccc;
+    border-radius: 24px;
+    padding: 8px 18px;
+    font-size: 14px;
+    width: 220px;
+    outline: none;
+    color: #888;
+  }
+  .search-box:focus { border-color: #2e7d32; }
+
+  .nav-phone {
+    color: #c62828;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  .nav-account {
+    color: #333;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+  .promo {
+    max-width: 1000px;
+    margin: 0 auto 30px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 30px rgba(0,0,0,.12);
+  }
+
+  .promo img {
+    width: 100%;
+    display: block;
+  }
+  
+</style>
+
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-left">
+    <div class="navbar-logo">
+      <img src="logo.png" alt="logo">
+    </div>
+    <button class="delivery-btn"> Delivery: Ingresa tu dirección</button>
+  </div>
+  <div class="navbar-right">
+    <input class="search-box" type="text" placeholder="¿Qué deseas pedir?">
+    <a href="#" class="nav-phone"> (01) 613 5000</a>
+    <a href="#" class="nav-account"> Mi cuenta</a>
+  </div>
+  <div class="modal" id="registroModal" style="display:none;">
+
+  <button class="modal-close" onclick="volverLogin()">✕</button>
+
+  <div class="modal-logo">
+    <img src="/static/logo.png" alt="logo">
+  </div>
+
+  <h2>Crear cuenta</h2>
+  <p>Regístrate para continuar</p>
+
+  <div class="input-group">
+    <label>Correo electrónico</label>
+    <input type="email" id="correo" placeholder="correo@ejemplo.com">
+
+    <label>Contraseña</label>
+    <input type="password" id="passwordRegistro" placeholder="••••••••">
+  </div>
+
+  <button class="btn-login" onclick="registrarse()">
+    Registrarse
+  </button>
+
+  <p class="mensaje-error" id="mensajeRegistro"
+     style="display:none;color:green;">
+     Registro exitoso
+  </p>
+
+  <div class="modal-footer">
+    ¿Ya tienes cuenta?
+    <a href="#" onclick="volverLogin()">Inicia sesión</a>
+  </div>
+
+</div>
+</nav>
+
+<div class="promo">
+  <img src="promocion.png" alt="promocion">
+</div>
+
+</body>
+</html>
